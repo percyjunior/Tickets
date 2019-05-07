@@ -12,7 +12,7 @@ exports.MostrarUsuarios = function(req, res, next) {
 }
 
 exports.logginGet = function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('User/login')
 }
 
 exports.logginPost = function(req, res, next) {

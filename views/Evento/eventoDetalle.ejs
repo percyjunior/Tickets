@@ -69,31 +69,49 @@
           <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
           <div class="card-body">
             <h3 class="card-title">Product Name</h3>
-            <h4>$24.99</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
             4.0 stars
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
+            <form class="needs-validation" id="productoFormulario" method="post" accept-charset="utf-8" entype="multipart/form-data">
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="cantikid"># de Niños: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="cantikid" type="number" min="1" step="1" id="cantikid" class="form-control" placeholder="Ingresar el cantidad de tickets para niños" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                 <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="cantiAdu"># de Adultos: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="cantiAdu" type="number" min="1" step="1" id="cantiAdu" class="form-control" placeholder="Ingresar el cantidad de tickets para adultos" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="text-center">
+                  <button class="btn btn-primary col-md-3" type="submit" value="Upload">Compra de tickets</button>
+                </div>
+              </div>
+              </form>
           </div>
         </div>
         <!-- /.card -->
-
-        <div class="card card-outline-secondary my-4">
-          <div class="card-header">
-            Product Reviews
-          </div>
-          <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <a href="#" class="btn btn-success">Leave a Review</a>
-          </div>
-        </div>
+        <br>
+        
         <!-- /.card -->
 
       </div>
