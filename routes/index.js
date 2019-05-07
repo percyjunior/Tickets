@@ -5,10 +5,16 @@ let common = require('../controller/common')
 /* GET home page. */
 router.get('/', common.home);
 
-router.get('/evento', common.eventoDetalle);
+/* GET Evento page. */
+let pedido = require('../controller/pedido')
+router.get('/evento', pedido.eventoDetalle);
 
-let users = require('../controller/users')
+router.post('/evento', pedido.eventoDetallePost);
+
+router.get('/evento/asientos', pedido.asientoDetalle);
+
 /* GET users listing. */
+let users = require('../controller/users')
 router.get('/CrearUsuario', users.CrearUsuarioGet);
 
 router.post('/CrearUsuario', users.CrearUsuarioPost);
