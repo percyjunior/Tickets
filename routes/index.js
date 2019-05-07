@@ -49,6 +49,12 @@ router.post('/evento', pedido.eventoDetallePost);
 
 router.get('/evento/asientos', pedido.asientoDetalle);
 
+router.post('/evento/asientos', pedido.asientoDetallePost);
+
+router.get('/evento/formulario', pedido.formularioCliente);
+
+router.post('/evento/formulario', pedido.formularioClientePost);
+
 /* GET users listing. */
 let users = require('../controller/users')
 router.get('/CrearUsuario', users.CrearUsuarioGet);
