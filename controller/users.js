@@ -1,10 +1,10 @@
 
 exports.CrearUsuarioGet = function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('User/crearUser');
 }
 
 exports.CrearUsuarioPost = function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('User/crearUser');
 }
 
 exports.MostrarUsuarios = function(req, res, next) {
