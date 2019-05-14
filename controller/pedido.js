@@ -1,3 +1,5 @@
+var qrImage = require('qr-image');
+var fs = require('fs');
 
 exports.eventoDetalle = function(req, res, next){
     res.render('Evento/eventoDetalle');
@@ -34,15 +36,28 @@ exports.formularioCliente = function(req, res, next){
 }
 
 exports.formularioClientePost = function(req, res, next){
+    var cod = ["cod1", "cod2"];
     item = {
-        ci1: req.body.ci1,
-        nombre1: req.body.nombre1,
-        nacimiento1: req.body.cnacimiento,
-        ci2: req.body.ci2,
-        nombre2: req.body.nombre2,
-        nacimiento2: req.body.nacimiento2,
+        data:[
+            {
+                ci1: req.body.ci1,
+                nombre1: req.body.nombre1,
+                nacimiento1: req.body.nacimiento 
+            },
+            {
+                ci2: req.body.ci2,
+                nombre2: req.body.nombre2,
+                nacimiento2: req.body.nacimiento2
+            }
+        ],
         email: req.body.email
     }
-    console.log(item);
+    for (i in item.data){
+        let datastring = JSON.stringify(item.data[i]);
+        qrImage
+            .image(datastring,{type:'jpg', size:20})
+            .pipe(fs.createWriteStream(cod[i]+".jpg"));
+        console.log(item.data[i]);
+    }
     res.redirect('/');
 }
