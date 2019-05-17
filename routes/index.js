@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 let common = require('../controller/common')
 const Task = require('../model/task');
+const contrasena = require('../controller/codigo3');
+
 /*router.get('/', async (req, res) => {//para que responda
   const tasks = await Task.find();
   res.render('index', {//estoy renderizando una vista
@@ -15,6 +17,12 @@ router.post('/add', async (req, res, next) => {
     await task.save();
     res.redirect('/');
   });
+  
+  /*router.get('/conseguir', async (req, res, next) => {
+    const contrasena = new contrasena(req.body);
+    await contrasena.save();
+    res.redirect('/');
+  });*/
   router.get('/turn/:id', async (req, res, next) => {
     let { id } = req.params;
     const task = await Task.findById(id);
