@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 chars = "0123456789ABCDEFG";
 lon = 6;
 const TaskSchema= Schema({
-    nombre: String,
-    telefono:String,
-    password: require('../controller/codigo3'),
+    ci1: String,
+    nombre1:String,
+    nacimiento1: String,
     /*{
       type: String,
       validate: function(chars,lon) {
@@ -18,6 +18,9 @@ const TaskSchema= Schema({
           return code; 
         }
     },*/
+    ci2:String,
+    nombre2:String,
+    nacimiento2: String,
     email:String,
   status: {
     type: Boolean,
