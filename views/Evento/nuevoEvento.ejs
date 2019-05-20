@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Shop Homepage - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Crear nuevo evento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Login">loggin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form action="recuperardatos" method="post">
+
+    <!-- Page Content -->
+    <div class="container">
+      <br>
+      <br>
+      <div class="container">
+        <div class="card card-register mx-auto mt-5">
+          <div class="card-header"> Datos Personales </div>
+          <div class="card-body">
+            <form action="/add" method="post">
+              <h4>Ticket #1</h4>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="ci1">Cedula de Identidad: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input class="form-control" name="ci1" id="ci1" type="number"
+                        placeholder="Ingrese su Cedula de Identidad">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="nombre1">Nombre Completo: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="nombre1" type="text" id="nombre1" class="form-control"
+                        placeholder="Ingresar su Nombre Completo" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="nacimiento1">Fecha de Nacimiento</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="nacimiento1" type="date" id="nacimiento1" class="form-control" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4>Ticket #2</h4>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="ci2">Cedula de Identidad: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input class="form-control" name="ci2" id="ci2" type="number"
+                        placeholder="Ingrese su Cedula de Identidad">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="nombre2">Nombre Completo: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="nombre2" type="text" id="nombre2" class="form-control"
+                        placeholder="Ingresar su Nombre Completo" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="nacimiento2">Fecha de Nacimiento</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="nacimiento2" type="date" id="nacimiento2" class="form-control" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="form-row">
+                <div class="col-md-3">
+                  <div class="form-label-group">
+                    <label for="email">Correo Electronico:</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-label-group">
+                    <input name="email" type="email" id="email" class="form-control" autofocus="autofocus"
+                      placeholder="Ingrese el correo electronico responsable">
+                    <span class="help-inline error-message" style="color:red;"></span>
+                    <br>
+                    <div class="alert alert-danger" role="alert">
+                      ¡Asegurese que tiene acceso al correo ingresado!
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+            <div class="text-center">
+              <button class="btn btn-primary col-md-3" type="submit" value="Upload"> Pagar Pedido</button>
+            </div>
+          </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  </form>
+
+</body>
+
+</html>
