@@ -65,7 +65,30 @@ function email() {
                 recuperar(pedido, respuesta);
                 break;
             }
-           
+            default: {
+                fs.exists(camino, function (existe) {
+                    if (existe) {
+                        fs.readFile(camino, function (error, contenido) {
+                            if (error) {
+                                respuesta.writeHead(500, { 'Content-Type': 'text/plain' });
+                                respuesta.write('Error interno');
+                                respuesta.end();
+                            } else {
+                                var vec = camino.split('.');
+                                var extension = vec[vec.length - 1];
+                                var mimearchivo = mime[extension];
+                                respuesta.writeHead(200, { 'Content-Type': mimearchivo });
+                                respuesta.write(contenido);
+                                respuesta.end();
+                            }
+                        });
+                    } else {
+                        respuesta.writeHead(404, { 'Content-Type': 'text/html' });
+                        respuesta.write('<!doctype html><html><head></head><body>Recurso inexistente</body></html>');
+                        respuesta.end();
+                    }
+                });
+            }
         }
     }
     function recuperar(pedido, respuesta) {
@@ -91,34 +114,7 @@ function email() {
         });
     }
 
-    /*function listar(respuesta) {
-      fs.readdir('./public/upload/',function (error,archivos){
-          var fotos='';
-          for(var x=0;x<archivos.length;x++) {
-              fotos += '<img src="upload/'+archivos[x]+'" width="80"><br>';
-          }
-          respuesta.writeHead(200, {'Content-Type': 'text/html'});
-          respuesta.write('<!doctype html><html><head></head><body>'+
-          fotos+
-          '<a href="index.html">Retornar</a></body></html>');		
-          respuesta.end();	  
-      });	
-    }
-    function subir(pedido,respuesta){
     
-        var entrada=new formidable.IncomingForm();
-        entrada.uploadDir='upload';
-        entrada.parse(pedido);
-        entrada.on('fileBegin', function(field, file){
-            file.path = "./public/upload/"+file.name;
-        });	
-        entrada.on('end', function(){
-            respuesta.writeHead(200, {'Content-Type': 'text/html'});
-            respuesta.write('<!doctype html><html><head></head><body>'+
-                            'Archivo subido<br><a href="vista.html">Retornar</a></body></html>');		
-            respuesta.end();
-        });	
-    }*/
     function mandar(respuesta, name, contra, nameClient) {
         var transporter = nodemailer.createTransport({
             service: 'Gmail',
@@ -138,19 +134,6 @@ function email() {
         var daym = mydate.getDate();
         if (daym < 10)
             daym = "0" + daym;
-        //var fotos1='';
-        //fotos1 = '<img src="http://d-ticket.com.mx/wp-content/uploads/2018/02/logo-d-ticket.png" width="800">';
-
-        //fs.readdir('./public/upload/',function (error,archivos){
-        // var fotos='';
-        // for(var x=0;x<archivos.length;x++) {
-        //fotos += '<img src="upload/'+archivos[x]+'" width="80"><br>';
-
-        //  fotos = '<img src="https://miracomohacerlo.com/wp-content/uploads/2016/10/codigo-qr-1024x1024.jpg" width="80">';
-        // }
-        /* respuesta.writeHead(200, {'Content-Type': 'text/html'});
-         respuesta.write('<!doctype html><html><head></head><body>'+ fotos);		
-         respuesta.end();*/
         var mailOptions = {
             from: 'Tickets <wendycalizayaperez@gmail.com>', to: name,
             subject: 'Hola ' + nameClient,
@@ -178,8 +161,6 @@ function email() {
         // });	
 
     }
-
-  //  console.log('Servidor web iniciado');
 }
 exports.formularioCliente = function (req, res, next) {
     email();

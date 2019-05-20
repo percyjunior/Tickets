@@ -17,7 +17,8 @@ router.post('/add', async (req, res, next) => {
     await task.save();
     res.redirect('/');
   });
-  
+ 
+
   /*router.get('/conseguir', async (req, res, next) => {
     const contrasena = new contrasena(req.body);
     await contrasena.save();
@@ -66,6 +67,8 @@ router.post('/evento/formulario', pedido.formularioClientePost);
 /* GET users listing. */
 let users = require('../controller/users')
 router.get('/CrearUsuario', users.CrearUsuarioGet);
+router.post('/logeo', users.ingresarLogin);
+
 
 router.post('/CrearUsuario', users.CrearUsuarioPost);
 
