@@ -6,18 +6,7 @@ const TaskSchema= Schema({
     ci1: String,
     nombre1:String,
     nacimiento1: String,
-    /*{
-      type: String,
-      validate: function(chars,lon) {
-          code = "";
-          for (x=0; x < lon; x++){
-            rand = Math.floor(Math.random()*chars.length);
-            code += chars.substr(rand, 1);
-          }
-          console.log(code);
-          return code; 
-        }
-    },*/
+    a:String,
     ci2:String,
     nombre2:String,
     nacimiento2: String,
