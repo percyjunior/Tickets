@@ -35,16 +35,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Login">loggin</a>
+              <a class="nav-link" href="/Login">Salir</a>
             </li>
           </ul>
         </div>
@@ -58,21 +49,21 @@
       <br>
       <div class="container">
         <div class="card card-register mx-auto mt-5">
-          <div class="card-header"> Datos Personales </div>
+          <div class="card-header"> Datos del evento </div>
           <div class="card-body">
             <form action="/add" method="post">
-              <h4>Ticket #1</h4>
+              <h4>Creacion del EVENTO</h4>
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-3">
                     <div class="form-label-group">
-                      <label for="ci1">Cedula de Identidad: </label>
+                      <label for="nombreEvento">Nombre del evento: </label>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-label-group">
-                      <input class="form-control" name="ci1" id="ci1" type="number"
-                        placeholder="Ingrese su Cedula de Identidad">
+                      <input class="form-control" name="nombreEvento" id="nombreEvento" type="text"
+                        placeholder="Ingrese el nombre del evento">
                       <span class="help-inline error-message" style="color:red;"></span>
                     </div>
                   </div>
@@ -80,13 +71,13 @@
                 <div class="form-row">
                   <div class="col-md-3">
                     <div class="form-label-group">
-                      <label for="nombre1">Nombre Completo: </label>
+                      <label for="fechaEvento">Fecha del evento: </label>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-label-group">
-                      <input name="nombre1" type="text" id="nombre1" class="form-control"
-                        placeholder="Ingresar su Nombre Completo" autofocus="autofocus">
+                      <input name="fechaEvento" type="date" id="fechaEvento" class="form-control"
+                        placeholder=".../.../..." autofocus="autofocus">
                       <span class="help-inline error-message" style="color:red;"></span>
                     </div>
                   </div>
@@ -94,22 +85,38 @@
                 <div class="form-row">
                   <div class="col-md-3">
                     <div class="form-label-group">
-                      <label for="nacimiento1">Fecha de Nacimiento</label>
+                      <label for="Descripcion">Descripcion: </label>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-label-group">
-                      <input name="nacimiento1" type="date" id="nacimiento1" class="form-control" autofocus="autofocus">
+                      <input name="Descripcion" type="text" id="Descripcion" class="form-control" placeholder="Ingrese la descripcion" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="nombreCoordinador">Nombre del coordinador: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="nombreCoordinador" type="text" id="nombreCoordinador" class="form-control" placeholder="Ingrese el nombre del coordinador" autofocus="autofocus">
                       <span class="help-inline error-message" style="color:red;"></span>
                     </div>
                   </div>
                 </div>
               </div>
-              <h4>Ticket #2</h4>
+              <h4>Crear el tipo de asiento    </h4>
+             
+              
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-3">
                     <div class="form-label-group">
+                       
                       <label for="ci2">Cedula de Identidad: </label>
                     </div>
                   </div>

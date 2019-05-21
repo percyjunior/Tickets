@@ -4,6 +4,9 @@ var fs = require('fs');
 exports.eventoDetalle = function (req, res, next) {
     res.render('Evento/eventoDetalle');
 }
+exports.eventoNuevo = function (req, res, next) {
+    res.render('Evento/nuevoEvento');
+}
 
 exports.eventoDetallePost = function (req, res, next) {
     item = {

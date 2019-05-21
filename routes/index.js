@@ -53,6 +53,7 @@ router.post('/add', async (req, res, next) => {
 /* GET Evento page. */
 let pedido = require('../controller/pedido')
 router.get('/evento', pedido.eventoDetalle);
+router.get('/nuevoEvento', pedido.eventoNuevo);
 
 router.post('/evento', pedido.eventoDetallePost);
 
