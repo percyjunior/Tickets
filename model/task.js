@@ -3,21 +3,13 @@ const Schema = mongoose.Schema;
 chars = "0123456789ABCDEFG";
 lon = 6;
 const TaskSchema= Schema({
-    nombre: String,
-    telefono:String,
-    password: require('../controller/codigo3'),
-    /*{
-      type: String,
-      validate: function(chars,lon) {
-          code = "";
-          for (x=0; x < lon; x++){
-            rand = Math.floor(Math.random()*chars.length);
-            code += chars.substr(rand, 1);
-          }
-          console.log(code);
-          return code; 
-        }
-    },*/
+    ci1: String,
+    nombre1:String,
+    nacimiento1: String,
+    a:String,
+    ci2:String,
+    nombre2:String,
+    nacimiento2: String,
     email:String,
   status: {
     type: Boolean,
