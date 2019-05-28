@@ -42,34 +42,29 @@ exports.formularioCliente = function (req, res, next) {
     res.render('Evento/formularioPersonas');
 }
 
-exports.formularioClientePost = function (req, res, next) {
-    var cod = ["cod1", "cod2"];
-    /* for (var j = 0; j < (cod[0]+cod[1]); j++) {
-         var listItem = req.body.createElement('li');
-         listItem.textContent = superPowers[j];
-         myList.appendChild(listItem);
-     }*/
-    item = {
-        data: [
-            {
-                ci1: req.body.ci1,
-                nombre1: req.body.nombre1,
-                nacimiento1: req.body.nacimiento1
-            },
-            {
-                ci2: req.body.ci2,
-                nombre2: req.body.nombre2,
-                nacimiento2: req.body.nacimiento2
-            }
-        ],
-        email: req.body.email
-    }
-    for (i in item.data) {
-        let datastring = JSON.stringify(item.data[i]);
-        qrImage
-            .image(datastring, { type: 'jpg', size: 20 })
-            .pipe(fs.createWriteStream(cod[i] + ".jpg"));
-        console.log(item.data[i]);
-    }
-    res.redirect('/');
+exports.formularioClientePost = function(req, res, next){
+  var cod = ["cod1", "cod2"];
+  item = {
+      data:[
+          {
+              ci1: req.body.ci1,
+              nombre1: req.body.nombre1,
+              nacimiento1: req.body.nacimiento 
+          },
+          {
+              ci2: req.body.ci2,
+              nombre2: req.body.nombre2,
+              nacimiento2: req.body.nacimiento2
+          }
+      ],
+      email: req.body.email
+  }
+  for (i in item.data){
+      let datastring = JSON.stringify(item.data[i]);
+      qrImage
+          .image(datastring,{type:'jpg', size:20})
+          .pipe(fs.createWriteStream(cod[i]+".jpg"));
+      console.log(item.data[i]);
+  }
+  res.redirect('/');
 }
