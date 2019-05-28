@@ -54,7 +54,7 @@ exports.formularioClientePost = function (req, res, next) {
             {
                 ci1: req.body.ci1,
                 nombre1: req.body.nombre1,
-                nacimiento1: req.body.nacimiento
+                nacimiento1: req.body.nacimiento1
             },
             {
                 ci2: req.body.ci2,

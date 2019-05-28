@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 const express = require('express');
+const paypal = require('paypal-rest-sdk')
 const path = require('path');
 var cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -26,6 +27,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+//get the id and secret of the client Melgar
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': '',
+  'client_secret': ''
+});
 
 app.use(express.static(path.join(__dirname, 'Static')))
 //app.use('/Login', usersRouter);
