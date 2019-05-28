@@ -15,8 +15,8 @@ var nodemailer = require('nodemailer');
 router.get('/', common.home);
 router.post('/add', async (req, res, next) => {
   a=rand_code("0123456789ABCDEFG", 6);
-  email(res, req.body.ci1, req.body.nombre1, req.body.nacimiento1
-    , req.body.ci2, req.body.nombre2, req.body.nacimiento2, req.body.email,a);
+  email(res, req.body.ci1, req.body.nombre1,req.body.apellido1,req.body.sexo1,req.body.telefono1, req.body.nacimiento1
+    , req.body.ci2, req.body.nombre2, req.body.apellido2,req.body.sexo2,req.body.telefono2,req.body.nacimiento2, req.body.email,a);
   const task = new Task(req.body);
   await task.save();
   res.redirect('/');
@@ -31,7 +31,7 @@ function rand_code(chars, lon){
 	}
 	return code;
 }
-function email(respuesta, ci1, nombre1, nacimiento1, ci2, nombre2, nacimiento2, email,a) {
+function email(respuesta, ci1, nombre1,apellido1, sexo1,telefono1,nacimiento1, ci2, nombre2,apellido2,sexo2,telefono2, nacimiento2, email,a) {
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -52,21 +52,29 @@ function email(respuesta, ci1, nombre1, nacimiento1, ci2, nombre2, nacimiento2, 
     daym = "0" + daym;
   var mailOptions = {
     from: 'Tickets <wendycalizayaperez@gmail.com>', to: email,
-    subject: 'Hola ' + nombre1,
+    subject: 'Hola ' + nombre1+' '+apellido1,
     text: 'Hola Mundo',
     html:// fotos1+'<br><b style="color:#4D98F1;">Cliente: </b>'
-    nombre1 +
-      '<br><b style="color:#4D98F1;">Codigo de reserva: </b>' + a +
-      '<br><b style="color:#4D98F1;">CI: </b>'+ci1 +
-      '<br><b style="color:#4D98F1;">Nacimiento: </b>'+nacimiento1 +
-      '<br><b style="color:#4D98F1;">Nombre segunda persona: </b>'+nombre2 +
-      '<br><b style="color:#4D98F1;">CI: </b>'+ci2 +
-      '<br><b style="color:#4D98F1;">Nacimiento: </b>'+nacimiento2 +
-      '<br><b style="color:#4D98F1;">Fecha: </b>' +
-      '<small><font><b>' + daym + '/' + month + '/' + year + '</b></font></small>' +
+    '<img src="http://d-ticket.com.mx/wp-content/uploads/2018/02/logo-d-ticket.png" width="800">'+
+    '<img src="https://www.emi.edu.bo/images/Logos_EMI/logo-emi.png" width="300">'+
       '<br><b style="color:#4D98F1;">Direccion: </b>Escuela militar de ingeniera' +
       '<br><b style="color:#4D98F1;">NIT: </b>16036160' +
-      '<div style="text-align:center;"><TABLE style="text-align:center;" border="1" cellpadding="0" cellspacing="0" width="50%"><TR><TD  width="50%" bgcolor="blue" style="color:#EFF3F9">Nombre del evento</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Cantidad de personas</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Monto unitario</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Monto total</TD></TR><TR><TD width="50%" style="color:#010A0C">2,1</TD><TD width="50%" style="color:#010A0C">2,2</TD><TD width="150%" style="color:#010A0C">2,3</TD><TD width="150%" style="color:#010A0C">4512</TD></TR></TABLE></div>' +
+      '<br><b style="color:#4D98F1;">Fecha de compra: </b>'+
+      '<small><font><b>'+daym+'/'+month+'/'+year+'</b></font></small>'+
+      '<br><b style="color:#4D98F1;">Codigo de reserva: </b>' + a +
+      '<div style="text-align:center;"><TABLE style="text-align:center;" border="1" cellpadding="0" cellspacing="0" width="50%"><TR><TD  width="50%" bgcolor="blue" style="color:#EFF3F9">CI</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Nombre</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Apellido</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Sexo</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Telefono</TD><TD width="50%" bgcolor="blue" style="color:#EFF3F9">Fecha de nacimiento</TD></TR><TR><TD width="50%" style="color:#010A0C">'+ci1+
+      '</TD><TD width="50%" style="color:#010A0C">'+nombre1+
+      '</TD><TD width="150%" style="color:#010A0C">'+apellido1+
+      '</TD><TD width="150%" style="color:#010A0C">'+sexo1+
+      '</TD><TD width="150%" style="color:#010A0C">'+telefono1+
+      '</TD><TD width="150%" style="color:#010A0C">'+nacimiento1+
+      '</TD></TR><TR><TD width="50%" style="color:#010A0C">'+ci2+
+      '</TD><TD width="150%" style="color:#010A0C">'+nombre2+
+      '</TD><TD width="150%" style="color:#010A0C">'+apellido2+
+      '</TD><TD width="150%" style="color:#010A0C">'+sexo2+
+      '</TD><TD width="150%" style="color:#010A0C">'+telefono2+
+      '</TD><TD width="150%" style="color:#010A0C">'+nacimiento2+
+      '</TR></TABLE></div>' +
       ' <br><b style="color:#4D98F1;">la foto es: </b><!doctype html><html><head></head><body> '//+fotos
   };
   transporter.sendMail(mailOptions, function (error, info) {
