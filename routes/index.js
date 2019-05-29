@@ -145,5 +145,7 @@ router.get('/MostratUsuarios', users.MostrarUsuarios);
 router.get('/Login', users.logginGet);
 
 router.post('/Login', users.logginPost);
+router.get('/succes',(req, res) => res.send("Transaccion correcta"));
+router.get('/cancel', (req, res) => res.send('Transaccion cancelada'));
 
 module.exports = router;

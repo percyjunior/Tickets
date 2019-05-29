@@ -14,6 +14,12 @@ mongoose.connect('mongodb://localhost/tickets')
   .then(db => console.log('db connected'))
   .catch(err => console.log(err));
 
+//Cofigurations of Paypal
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': 'AfxPnvrWouA6itWxf0Frr6ja2n-84FyCelw9NCMYF9lZx6hCjQX3NytyPajNwiMupdOo2_Mr7pJrHpHu',
+  'client_secret': 'EI3G0qPS1_eiyZ32mSl9tA9WYUPDcrMxu7DFcIdiMwMFOrJrsIG82MiXiwIaiu-ky_IBJRuOEuUxIb7L'
+});
 
 // view engine setup
 //app.set('port', process.env.PORT || 3000);// el que se encarga de los puertos es nodemon, con eso no importa si cambiamos el numero del puerto
@@ -27,13 +33,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-
-//get the id and secret of the client Melgar
-paypal.configure({
-  'mode': 'sandbox', //sandbox or live
-  'client_id': '',
-  'client_secret': ''
-});
 
 app.use(express.static(path.join(__dirname, 'Static')))
 //app.use('/Login', usersRouter);
