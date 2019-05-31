@@ -6,29 +6,14 @@ exports.CrearUsuarioGet = function (req, res, next) {
 
 }
 
-exports.ingresarLogin = function (pedido, respuesta, next) {
- /* var paso;
-  for (paso = 0; paso < 5; paso++) {
-    // Se ejecuta 5 veces, con valores desde paso desde 0 hasta 4.
-    console.log('Dando un paso al Este');
+exports.logginPost = function (pedido, respuesta, next) {
+  res.send("Ingresndo al metodo general");
+}
 
-  };*/
-    mandar(respuesta, pedido.body.pass, pedido.body.email);
+exports.home = function(req, res, next){
+  res.render('Admin/adminHome');
 }
-function mandar(respuesta, contra,name) {
-  if (name == 'wendycalizayaperez@gmail.com' && contra == 'admin') {
-    //respuesta.send('correcto');
-    console.log('Contraseña correcta');
-    respuesta.render('Evento/eventoCRUD');
-  }
-  else {
-    //respuesta.send('incorrecto');
-    console.log('Contraseña incorrecta');
-    respuesta.render('User/login');
-  }
- // console.log('Mensaje enviado: ' + info.response);
-}
-// res.send('veamos logeado');
+
 exports.CrearUsuarioPost = function (req, res, next) {
   // res.render('User/crearUser');
   res.send('respond with a resource');
@@ -44,7 +29,26 @@ exports.logginGet = function (req, res, next) {
 }
 
 exports.logginPost = function (req, res, next) {
-  res.send('respond with a resource');
+  if (req.body.email == 'wendycalizayaperez@gmail.com' && req.body.pass == 'admin' || req.body.email == 'percy21@hotmail.es' && req.body.pass == 'percygamboa') {
+    console.log('Contraseña correcta');
+    res.redirect('/admin');
+  }
+  else {
+    console.log('Contraseña incorrecta');
+    res.redirect('Login');
+  }
+}
+
+exports.eventos = function (req, res, next){
+  res.render('Admin/eventoCRUD');
+}
+
+exports.asientos = function (req, res, next){
+  res.render('Admin/asientoCRUD');
+}
+
+exports.usuarios = function (req, res, next){
+  res.render('Admin/usuarioCRUD');
 }
 
 exports.EliminarUsuarioGet = function (req, res, next) {
