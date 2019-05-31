@@ -7,23 +7,49 @@ const Task = require('../model/task');
 exports.eventoDetalle = function (req, res, next) {
     res.render('Evento/eventoDetalle');
 }
+<<<<<<< HEAD
+exports.eventoNuevo = function (req, res, next) {
+    res.render('Evento/nuevoEvento');
+}
+var kid=0,adult=0;
+=======
 
 
+>>>>>>> d9229493cadaf0d5251ae13fba3ea473072602c8
 exports.eventoDetallePost = function (req, res, next) {
+  mandar(req.body.cantikid,req.body.cantiAdu);
     item = {
         kid: req.body.cantikid,
         adult: req.body.cantiAdu
     }
+    
     console.log("Estos son los datos que se agarran del POST");
     console.log(item);
     res.redirect('/evento/asientos');
 }
-
+var a,b;
+function mandar(cantikid,cantiAdu){
+a=cantikid;
+b=cantiAdu;
+}
+function recibir1(){
+console.log(a);
+}
+function recibir2(){
+  console.log(a);
+  }
 exports.asientoDetalle = function (req, res, next) {
+    recibir1();
+    recibir2();
+    //$("#cantiAdu").html(recibir1());
+    var div=document.getElementById("cantiAdu");
+    div.innerHTML=recibir1();
     res.render('Evento/seleccionAsientos');
 }
 
 exports.asientoDetallePost = function (req, res, next) {
+  //console.log(kid,adult);
+  
     item = {
         cantiAdu: req.body.cantiAdu,
         cantikid: req.body.cantikid,
