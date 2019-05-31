@@ -7,24 +7,10 @@ const Task = require('../model/task');
 exports.eventoDetalle = function (req, res, next) {
     res.render('Evento/eventoDetalle');
 }
-<<<<<<< HEAD
 exports.eventoNuevo = function (req, res, next) {
     res.render('Evento/nuevoEvento');
 }
 var kid=0,adult=0;
-=======
-
-
-exports.eventoNuevo = function (req, res, next) {
-    res.render('Evento/nuevoEvento');
-
-  }
-
-
-
-
-
->>>>>>> f0bcd563bd74ca6b618d4c89316bb17dbbbf201e
 exports.eventoDetallePost = function (req, res, next) {
   mandar(req.body.cantikid,req.body.cantiAdu);
     item = {
