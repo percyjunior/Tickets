@@ -1,3 +1,5 @@
+const nuevoAsientoCreadoo = require('../model/nuevoAsientoCreado');
+
 exports.nuevo = function(req, res, next){
     res.render('Asiento/crearAsiento');
 }
@@ -8,6 +10,9 @@ exports.crearPost = function(req, res, next){
         disponible: req.body.disponible,
         evento: req.body.nombreEvento
     }
+    nuevoAsientoCreado = new nuevoAsientoCreadoo(item);
+    nuevoAsientoCreado.save();
+    
     console.log("Los datos del asiento son:");
     console.log(item);
     res.send("Asiento Creado");
