@@ -1,7 +1,7 @@
 var querystring = require('querystring');
 
 exports.CrearUsuarioGet = function (req, res, next) {
-  res.render('User/crearUser');
+  res.render('User/crearUsuario');
   //res.send('respond with a resource');
 
 }
@@ -15,8 +15,14 @@ exports.home = function(req, res, next){
 }
 
 exports.CrearUsuarioPost = function (req, res, next) {
-  // res.render('User/crearUser');
-  res.send('respond with a resource');
+  item = {
+    nombre: req.body.nombreUsuario,
+    password: req.body.password,
+    paypal: req.body.paypal,
+    secret: req.body.secret
+  }
+  console.log(item);
+  res.send('respond with a resourcasdasdasdasde');
 
 }
 

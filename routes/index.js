@@ -155,11 +155,11 @@ router.post('/evento/formulario', pedido.formularioClientePost);
 
 /* GET users listing. */
 let users = require('../controller/users')
-router.get('/CrearUsuario', users.CrearUsuarioGet);
+router.get('/admin/CrearUsuario', users.CrearUsuarioGet);
 
-router.post('/CrearUsuario', users.CrearUsuarioPost);
+router.post('/admin/CrearUsuario', users.CrearUsuarioPost);
 
-router.get('/MostratUsuarios', users.MostrarUsuarios);
+router.get('/admin/MostratUsuarios', users.MostrarUsuarios);
 
 router.get('/Login', users.logginGet);
 
