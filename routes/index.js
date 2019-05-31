@@ -118,9 +118,21 @@ router.get('/delete/:id', async (req, res, next) => {
   res.redirect('/');
 });
 /* GET Evento page. */
-let pedido = require('../controller/pedido')
+let pedido = require('../controller/pedido');
+let evento = require('../controller/evento');
+router.get('/admin/nuevoEvento', evento.nuevo);
+
+router.post('/admin/nuevoEvento', evento.nuevoPost);
+
+router.get('/admin/mostrarEventos', evento.mostrar);
+
+router.get('/admin/editarEvento', evento.editar);
+
+router.post('/admin/editarEvento', evento.editarPost);
+
+router.get('/admin/nuevoUsuario',)
+
 router.get('/evento', pedido.eventoDetalle);
-router.get('/nuevoEvento', pedido.eventoNuevo);
 
 router.post('/evento', pedido.eventoDetallePost);
 
@@ -135,8 +147,6 @@ router.post('/evento/formulario', pedido.formularioClientePost);
 /* GET users listing. */
 let users = require('../controller/users')
 router.get('/CrearUsuario', users.CrearUsuarioGet);
-router.post('/logeo', users.ingresarLogin);
-
 
 router.post('/CrearUsuario', users.CrearUsuarioPost);
 
@@ -145,7 +155,17 @@ router.get('/MostratUsuarios', users.MostrarUsuarios);
 router.get('/Login', users.logginGet);
 
 router.post('/Login', users.logginPost);
+
+router.get('/admin', users.home);
+
+router.get('/admin/evento',users.eventos);
+
+router.get('/admin/asiento',users.asientos);
+
+router.get('/admin/usuario',users.usuarios);
+
 router.get('/succes',(req, res) => res.send("Transaccion correcta"));
+
 router.get('/cancel', (req, res) => res.send('Transaccion cancelada'));
 
 module.exports = router;
