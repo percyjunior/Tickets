@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 let common = require('../controller/common')
+const paypal = require('paypal-rest-sdk')
 const Task = require('../model/task');
 const contrasena = require('../controller/codigo3');
 var nodemailer = require('nodemailer');
@@ -173,8 +174,32 @@ router.get('/admin/asiento',users.asientos);
 
 router.get('/admin/usuario',users.usuarios);
 
-router.get('/succes',(req, res) => res.send("Transaccion correcta"));
+router.get('/success', (req, res) => {
+  const payerId = req.query.PayerID;
+  const paymentId = req.query.paymentId;
 
+  const execute_payment_json = {
+    "payer_id": payerId,
+    "transactions": [{
+      "amount": {
+        "currency": "USD",
+        "total": "25.00"
+      }
+    }]
+  };
+
+  paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+    if (error) {
+      console.log(error.response);
+      throw error;
+    } else {
+      console.log(JSON.stringify(payment));
+      res.send('Success');
+    }
+  });
+});
+
+router.get('/cancel', (req, res) => res.send('Cancelled'));
 router.get('/cancel', (req, res) => res.send('Transaccion cancelada'));
 
 module.exports = router;
