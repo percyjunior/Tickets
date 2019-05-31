@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Shop Homepage - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Crear nuevo Usuario</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Login">Salir</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <form method="post">
+
+    <!-- Page Content -->
+    <div class="container">
+      <br>
+      <br>
+      <div class="container">
+        <div class="card card-register mx-auto mt-5">
+          <div class="card-header"><h4>Creacion de Usuario</h4></div>
+          <div class="card-body">
+            <form method="post">
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="nombreUsuario">Nombre del usuario: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input class="form-control" name="nombreUsuario" id="nombreUsuario" type="text"
+                        placeholder="Ingrese el nombre del evento">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="password">Contraseña: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="password" type="password" id="password" class="form-control"
+                        placeholder="Ingrese la contraseña del usuario" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="paypal">Id de Paypal: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="paypal" type="password" id="paypal" class="form-control"
+                        placeholder="Ingrese el ID de su cuenta de Paypal" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-label-group">
+                      <label for="secret">Secret de Paypal: </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-label-group">
+                      <input name="secret" type="password" id="secret" class="form-control"
+                        placeholder="Ingrese el secret de paypal" autofocus="autofocus">
+                      <span class="help-inline error-message" style="color:red;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <input id="entrada" onkeyup="escribir2()">
+              <div id="cont3"></div>
+              <script>
+                function escribir2() {
+                  valor = document.getElementById('entrada').value;
+                  var i = 1;
+                  if (i <= valor) {
+                    document.getElementById('cont3').innerHTML = valor + ' <br>' + i + '<input type="text" name="numero[]" size="20" ><br>';
+                    i++;
+                  }
+                } 
+              </script>-->
+            <!--  <h4>Crear el tipo de asiento</h4>
+              <h6>Cuantos tipos de asiento tendra?</h6>
+              <input name="ck" id="entrada" onkeyup="escribir2()">
+              <div id="cont3"></div>
+              <script>
+                function escribir2() {
+                  valor = document.getElementById('entrada').value;
+
+                  var i
+                  for (i = 1; i <= valor; i++) {
+                    document.write("<br>" + i+") ")
+                    document.write("Tipo de asiento: <input type='text' name='tipo[]' size='20' > Numero de asientos: <input type='text' name='numero[]' size='20' > Costo del asiento: <input type='text' name='costo[]' size='20' ><br>")
+                  }
+                  document.write("<br><button type='submit' value='Upload'> Registrar asientos</button>")
+                }
+              </script>  -->            
+          </div>
+          <div class="col-md-12">
+            <div class="text-center">
+              <button class="btn btn-primary col-md-3" type="submit" value="Upload"> Crear Usuario</button>
+            </div>
+          </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  </form>
+
+</body>
+
+</html>
