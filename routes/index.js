@@ -120,6 +120,7 @@ router.get('/delete/:id', async (req, res, next) => {
 /* GET Evento page. */
 let pedido = require('../controller/pedido');
 let evento = require('../controller/evento');
+let asiento = require('../controller/asiento');
 router.get('/admin/nuevoEvento', evento.nuevo);
 
 router.post('/admin/nuevoEvento', evento.nuevoPost);
@@ -130,7 +131,15 @@ router.get('/admin/editarEvento', evento.editar);
 
 router.post('/admin/editarEvento', evento.editarPost);
 
-router.get('/admin/nuevoUsuario',)
+router.get('/admin/crearAsiento', asiento.nuevo);
+
+router.post('/admin/crearAsiento', asiento.crearPost);
+
+router.get('/admin/editarAsiento', asiento.editar);
+
+router.post('/admin/editarASiento', asiento.editarPost);
+
+router.get('/admin/mostrarAsientos', asiento.mostrar);
 
 router.get('/evento', pedido.eventoDetalle);
 
