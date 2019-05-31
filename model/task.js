@@ -3,19 +3,12 @@ const Schema = mongoose.Schema;
 chars = "0123456789ABCDEFG";
 lon = 6;
 const TaskSchema= Schema({
-    ci1: String,
-    nombre1:String,
-    apellido1:String,
-    sexo1:String,
-    telefono1:String,
-    nacimiento1: String,
-    a:String,
-    ci2:String,
-    nombre2:String,
-    apellido2:String,
-    sexo2:String,
-    telefono2:String,
-    nacimiento2: String,
+    ci: String,
+    nombre:String,
+    apellido:String,
+    sexo:String,
+    telefono:String,
+    nacimiento: String,
     email:String,
   status: {
     type: Boolean,

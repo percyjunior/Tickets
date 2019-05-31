@@ -71,13 +71,13 @@
                 <div class="form-row">
                   <div class="col-md-3">
                     <div class="form-label-group">
-                      <label for="fechaEvento">Fecha del evento: </label>
+                      <label for="LugarEvento">Lugar del evento: </label>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-label-group">
-                      <input name="fechaEvento" type="date" id="fechaEvento" class="form-control"
-                        placeholder=".../.../..." autofocus="autofocus">
+                      <input name="LugarEvento" type="tsxt" id="LugarEvento" class="form-control"
+                        placeholder="Lugar del evento" autofocus="autofocus">
                       <span class="help-inline error-message" style="color:red;"></span>
                     </div>
                   </div>
@@ -111,8 +111,6 @@
                   </div>
                 </div>
               </div>
-              <h4>Crear el tipo de asiento</h4>
-
               <!-- <input id="entrada" onkeyup="escribir2()">
               <div id="cont3"></div>
               <script>
@@ -125,6 +123,7 @@
                   }
                 } 
               </script>-->
+            <!--  <h4>Crear el tipo de asiento</h4>
               <h6>Cuantos tipos de asiento tendra?</h6>
               <input name="ck" id="entrada" onkeyup="escribir2()">
               <div id="cont3"></div>
@@ -133,13 +132,13 @@
                   valor = document.getElementById('entrada').value;
 
                   var i
-                  for (i = 0; i <= valor; i++) {
+                  for (i = 1; i <= valor; i++) {
                     document.write("<br>" + i+") ")
                     document.write("Tipo de asiento: <input type='text' name='tipo[]' size='20' > Numero de asientos: <input type='text' name='numero[]' size='20' > Costo del asiento: <input type='text' name='costo[]' size='20' ><br>")
                   }
                   document.write("<br><button type='submit' value='Upload'> Registrar asientos</button>")
                 }
-              </script>              
+              </script>  -->            
           </div>
           <div class="col-md-12">
             <div class="text-center">
