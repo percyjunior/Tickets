@@ -9,6 +9,7 @@ exports.CrearUsuarioGet = function (req, res, next) {
 exports.logginPost = function (pedido, respuesta, next) {
   res.send("Ingresndo al metodo general");
 }
+const nuevoUsuarioCreadoo = require('../model/nuevoUsuarioCreado');
 
 exports.home = function(req, res, next){
   res.render('Admin/adminHome');
@@ -21,6 +22,8 @@ exports.CrearUsuarioPost = function (req, res, next) {
     paypal: req.body.paypal,
     secret: req.body.secret
   }
+  nuevoUsuarioCreado = new nuevoUsuarioCreadoo(item);
+  nuevoUsuarioCreado.save();
   console.log(item);
   res.send('respond with a resourcasdasdasdasde');
 
