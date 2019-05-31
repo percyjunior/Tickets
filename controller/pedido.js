@@ -7,10 +7,24 @@ const Task = require('../model/task');
 exports.eventoDetalle = function (req, res, next) {
     res.render('Evento/eventoDetalle');
 }
+<<<<<<< HEAD
 exports.eventoNuevo = function (req, res, next) {
     res.render('Evento/nuevoEvento');
 }
 var kid=0,adult=0;
+=======
+
+
+exports.eventoNuevo = function (req, res, next) {
+    res.render('Evento/nuevoEvento');
+
+  }
+
+
+
+
+
+>>>>>>> f0bcd563bd74ca6b618d4c89316bb17dbbbf201e
 exports.eventoDetallePost = function (req, res, next) {
   mandar(req.body.cantikid,req.body.cantiAdu);
     item = {
@@ -37,8 +51,8 @@ exports.asientoDetalle = function (req, res, next) {
     recibir1();
     recibir2();
     //$("#cantiAdu").html(recibir1());
-    var div=document.getElementById("cantiAdu");
-    div.innerHTML=recibir1();
+    //var div=document.getElementById("cantiAdu");
+    //div.innerHTML=recibir1();
     res.render('Evento/seleccionAsientos');
 }
 
@@ -127,13 +141,6 @@ function email(respuesta, ci1, nombre1,apellido1, sexo1,telefono1,nacimiento1, c
 }
 
 exports.formularioClientePost = function (req, res, next) {
-  var intento = req.body;
-  JSON.stringify(intento);
-  for (var i=1; i<3;i++){
-    console.log("HOOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAAAA2");
-    console.log(req.body.nombre+i);
-    console.log("HOOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAAAA2");
-  }
     var cod = ["cod1", "cod2"];
     /* for (var j = 0; j < (cod[0]+cod[1]); j++) {
          var listItem = req.body.createElement('li');
@@ -168,6 +175,8 @@ exports.formularioClientePost = function (req, res, next) {
       task = new Task(item.data[i]);
       task.save();
     }
+    /*task = new Task(item);
+   task.save();*/
     for (i in item.data) {
         let datastring = JSON.stringify(item.data[i]);
         qrImage

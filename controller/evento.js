@@ -1,3 +1,6 @@
+
+const nuevoEventoCreadoo = require('../model/nuevoEventoCreado');
+
 exports.nuevo = function (req, res, next) {
     res.render('Evento/nuevoEvento');
 }
@@ -9,6 +12,9 @@ exports.nuevoPost = function (req, res, next){
         descripcion: req.body.Descripcion,
         coordinador: req.body.nombreCoordinador    
     }
+    nuevoEventoCreado = new nuevoEventoCreadoo(item);
+    nuevoEventoCreado.save();
+    
     console.log("Datos del evento:");
     console.log(item);
     res.send("Creado de Evento");
