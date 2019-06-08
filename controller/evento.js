@@ -2,7 +2,8 @@
 const nuevoEventoCreadoo = require('../model/nuevoEventoCreado');
 
 exports.nuevo = function (req, res, next) {
-    res.render('Evento/nuevoEvento');
+    var listEventos= [{nombre:'eento01',edad:12},{nombre:'eento01',edad:12},{nombre:'eento01',edad:12},{nombre:'eento01',edad:12},{nombre:'eento01',edad:12}]
+    res.json(listEventos);
 }
 
 exports.nuevoPost = function (req, res, next){

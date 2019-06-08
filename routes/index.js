@@ -13,7 +13,7 @@ var nodemailer = require('nodemailer');
   });
 });*/
 /* GET home page. */
-router.get('/', common.home);
+// router.get('/', common.home);
 router.post('/add', async (req, res, next) => {
   a=rand_code("0123456789ABCDEFG", 6);
   email(res, req.body.ci1, req.body.nombre1,req.body.apellido1,req.body.sexo1,req.body.telefono1, req.body.nacimiento1
@@ -122,6 +122,7 @@ router.get('/delete/:id', async (req, res, next) => {
 let pedido = require('../controller/pedido');
 let evento = require('../controller/evento');
 let asiento = require('../controller/asiento');
+
 router.get('/admin/nuevoEvento', evento.nuevo);
 
 router.post('/admin/nuevoEvento', evento.nuevoPost);

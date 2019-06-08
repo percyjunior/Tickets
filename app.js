@@ -9,6 +9,14 @@ var indexRouter = require('./routes/index');
 
 const app = express();
 
+// app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
+});
+
 /*conection with MongoDB*/
 mongoose.connect('mongodb://localhost/hola')
   .then(db => console.log('db connected'))
