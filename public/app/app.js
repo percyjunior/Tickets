@@ -22,6 +22,10 @@ var app = $.sammy(function () {
         loadPage('admin/home')
         //your function
     });
+    this.get('#/prueba', function () {
+        loadPage('prueba/home')
+        //your function
+    });
     this.get('#/plan_asis', function () {
         loadPage('plan_asis/Planilla_Asistencia')
         //your function

@@ -15,9 +15,9 @@ exports.nuevoPost = function (req, res, next){
     }
     nuevoEventoCreado = new nuevoEventoCreadoo(item);
     nuevoEventoCreado.save();
-    
     console.log("Datos del evento:");
     console.log(item);
+    res.json(nuevoEventoCreado);
     res.send("Creado de Evento");
 }
 exports.editar = function ( req, res, next){

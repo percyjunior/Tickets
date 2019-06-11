@@ -18,9 +18,14 @@ app.get('/', function(req, res) {
 });
 
 /*conection with MongoDB*/
-mongoose.connect('mongodb://localhost/hola')
+/*mongoose.connect('mongodb://localhost/holaaaa')
   .then(db => console.log('db connected'))
+  .catch(err => console.log(err));*/
+mongoose.connect ('mongodb://localhost/holaaaa', {useNewUrlParser: true})
+.then(db => console.log('db connected'))
   .catch(err => console.log(err));
+
+
 
 //Cofigurations of Paypal
 paypal.configure({
