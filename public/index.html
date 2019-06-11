@@ -153,40 +153,34 @@
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
 					<li class="treeview" ng-repeat="module in listMenuPermit">
-						<a href="#">
+						<a href="#/Tickets">
 							<i class="test"></i>
 							<span>Inicio</span>
 						</a>
-						<ul class="treeview-menu">
-							<li ng-repeat="page in module.pages"><a href="#/{{page.path}}"><i class="fa fa-circle-o"></i> {{page.title}}</a></li>
-						</ul>
+						
                     </li>
                     <li class="treeview" ng-repeat="module in listMenuPermit">
 						<a href="#">
 							<i class="test"></i>
 							<span>Tickets</span>
 						</a>
-						<ul class="treeview-menu">
-							<li ng-repeat="page in module.pages"><a href="#/{{page.path}}"><i class="fa fa-circle-o"></i> {{page.title}}</a></li>
-						</ul>
+						
                     </li>
                     <li class="treeview" ng-repeat="module in listMenuPermit">
-						<a href="#">
+						<a href="#/Evento">
 							<i class="test"></i>
 							<span>Eventos</span>
 						</a>
 						<ul class="treeview-menu">
-							<li ng-repeat="page in module.pages"><a href="#/{{page.path}}"><i class="fa fa-circle-o"></i> {{page.title}}</a></li>
-						</ul>
+								<li ng-repeat="page in module.pages"><a href="#/Asiento"><i class="fa fa-circle-o"></i> Asientos</a></li>
+							</ul>
                     </li>
                     <li class="treeview" ng-repeat="module in listMenuPermit">
-						<a href="#">
+						<a href="#/registros">
 							<i class="test"></i>
 							<span>Ventas</span>
 						</a>
-						<ul class="treeview-menu">
-							<li ng-repeat="page in module.pages"><a href="#/{{page.path}}"><i class="fa fa-circle-o"></i> {{page.title}}</a></li>
-						</ul>
+						
 					</li>
 				</ul>
 			</section>

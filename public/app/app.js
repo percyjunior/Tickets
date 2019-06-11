@@ -6,7 +6,7 @@ function loadPage(page) {
 
 var app = $.sammy(function () {
 
-    this.get('#/tickets', function () {
+    this.get('#/Evento', function () {
         loadPage('ticket/home')
         //your function
     });
@@ -14,7 +14,7 @@ var app = $.sammy(function () {
         loadPage('registro/home')
         //your function
     });
-    this.get('#/evento', function () {
+    this.get('#/Tickets', function () {
         loadPage('evento/home')
         //your function
     });
@@ -22,8 +22,8 @@ var app = $.sammy(function () {
         loadPage('admin/home')
         //your function
     });
-    this.get('#/prueba', function () {
-        loadPage('prueba/home')
+    this.get('#/Asiento', function () {
+        loadPage('Asiento/Asiento')
         //your function
     });
     this.get('#/plan_asis', function () {
