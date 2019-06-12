@@ -1,7 +1,5 @@
 $(document).ready(function () {
-
     cargarDatos();
-
     function cargarDatos() {
         $.ajax({
             url: '/admin/nuevoEvento',

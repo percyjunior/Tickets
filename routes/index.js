@@ -129,6 +129,8 @@ router.post('/admin/nuevoEvento', evento.nuevoPost);
 
 router.get('/admin/mostrarEventos', evento.mostrar);
 
+router.delete('/admin/EliminarEventos', evento.destroy);
+
 router.get('/admin/editarEvento', evento.editar);
 
 router.post('/admin/editarEvento', evento.editarPost);
