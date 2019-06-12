@@ -14,7 +14,10 @@ var app = $.sammy(function () {
         loadPage('ticket/mostrar')
         //your function
     });
-   
+    this.get('#/Evento/Reportes', function () {
+        loadPage('Reportes/mostrar')
+        //your function
+    });
     this.get('#/registros', function () {
         loadPage('registro/home')
         //your function
