@@ -126,8 +126,11 @@ let asiento = require('../controller/asiento');
 router.get('/admin/nuevoEvento', evento.nuevo);
 
 router.post('/admin/nuevoEvento', evento.nuevoPost);
+router.post('/admin/nuevoAsiento', asiento.crearPost);
 
 router.get('/admin/mostrarEventos', evento.mostrar);
+router.get('/admin/mostrarAsientos', asiento.mostrar);
+router.delete('/admin/EliminarAsiento', asiento.destroy);
 
 router.delete('/admin/EliminarEventos', evento.destroy);
 

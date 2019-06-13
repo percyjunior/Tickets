@@ -172,8 +172,14 @@
 							<span>Eventos</span>
 						</a>
 						<ul class="treeview-menu">
+							<li ng-repeat="page in module.pages"><a href="#/Evento/Mostrar"><i class="fa fa-circle-o"></i> Mostrar Eventos</a></li>
+						</ul>
+						<ul class="treeview-menu">
 								<li ng-repeat="page in module.pages"><a href="#/Asiento"><i class="fa fa-circle-o"></i> Asientos</a></li>
-							</ul>
+						</ul>
+						<ul class="treeview-menu">
+							<li ng-repeat="page in module.pages"><a href="#/Asiento/Mostrar"><i class="fa fa-circle-o"></i> Mostrar Asientos</a></li>
+						</ul>
                     </li>
                     <li class="treeview" ng-repeat="module in listMenuPermit">
 						<a href="#/registros">
