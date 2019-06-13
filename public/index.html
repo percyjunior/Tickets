@@ -33,9 +33,9 @@
 	<link href="../resources/select2/css/select2.min.css" rel="stylesheet">
 
 	<!-- jquery.timeentry -->
-    <link href="../resources/jquery.timeentry/css/jquery.timeentry.css" rel="stylesheet">
-    
-    
+	<link href="../resources/jquery.timeentry/css/jquery.timeentry.css" rel="stylesheet">
+
+
 
 	<!-- Custom Theme Style -->
 	<!--<link href="../resources/custom/css/custom.min.css" rel="stylesheet">
@@ -91,20 +91,7 @@
 									</p>
 								</li>
 								<!-- Menu Body -->
-								<li class="user-body">
-									<div class="row">
-										<div class="col-xs-4 text-center">
-											<a href="#">Followers</a>
-										</div>
-										<div class="col-xs-4 text-center">
-											<a href="#">Sales</a>
-										</div>
-										<div class="col-xs-4 text-center">
-											<a href="#">Friends</a>
-										</div>
-									</div>
-									<!-- /.row -->
-								</li>
+								
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-left">
@@ -157,16 +144,16 @@
 							<i class="test"></i>
 							<span>Inicio</span>
 						</a>
-						
-                    </li>
-                    <li class="treeview" ng-repeat="module in listMenuPermit">
+
+					</li>
+					<li class="treeview" ng-repeat="module in listMenuPermit">
 						<a href="#">
 							<i class="test"></i>
 							<span>Tickets</span>
 						</a>
-						
-                    </li>
-                    <li class="treeview" ng-repeat="module in listMenuPermit">
+
+					</li>
+					<li class="treeview" ng-repeat="module in listMenuPermit">
 						<a href="#/Evento">
 							<i class="test"></i>
 							<span>Eventos</span>
@@ -186,7 +173,14 @@
 							<i class="test"></i>
 							<span>Ventas</span>
 						</a>
-						
+
+					</li>
+					<li class="treeview" ng-repeat="module in listMenuPermit">
+						<a href="#/Reporte/Evento">
+							<i class="test"></i>
+							<span>Reportes</span>
+						</a>
+
 					</li>
 				</ul>
 			</section>
@@ -194,7 +188,7 @@
 		</aside>
 
 		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper" id="container-app" style="min-height: 916px;" >
+		<div class="content-wrapper" id="container-app" style="min-height: 916px;">
 
 		</div>
 		<!-- /.content-wrapper -->
@@ -247,13 +241,13 @@
 		<script src="../resources/devbridge-autocomplete/js/jquery.autocomplete.min.js"></script>
 
 
-        <script src="../resources/custom/js/custom.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.min.js"></script>
+		<script src="../resources/custom/js/custom.js"></script>
 
-        <script src="app/app.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.min.js"></script>
 
-		
+		<script src="app/app.js"></script>
+
+
 </body>
 <style>
 	.bs-glyphicons {
@@ -263,7 +257,7 @@
 		list-style: none;
 		overflow: hidden;
 	}
-	
+
 	.bs-glyphicons li {
 		float: left;
 		width: 25%;
@@ -277,24 +271,24 @@
 		margin-right: 2px;
 		cursor: pointer;
 	}
-	
+
 	.bs-glyphicons .glyphicon {
 		margin-top: 5px;
 		margin-bottom: 10px;
 		font-size: 24px;
 	}
-	
+
 	.bs-glyphicons .glyphicon-class {
 		display: block;
 		text-align: center;
 		word-wrap: break-word;
 		/* Help out IE10+ with class names */
 	}
-	
+
 	.bs-glyphicons li:hover {
 		background-color: rgba(86, 61, 124, .1);
 	}
-	
+
 	@media (min-width: 768px) {
 		.bs-glyphicons li {
 			width: 12.5%;
