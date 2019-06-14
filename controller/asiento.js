@@ -39,7 +39,7 @@ exports.mostrar = function(req, res, next){
             res.send('Error.');
         }else{
           res.send(asientos);
-        //console.log(evento);
+          //console.log(evento);
           //res.json(nuevoEventoCreado);
         }
     });
