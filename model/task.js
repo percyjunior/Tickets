@@ -9,7 +9,6 @@ const TaskSchema= Schema({
     sexo:String,
     telefono:String,
     nacimiento: String,
-    email:String,
   status: {
     type: Boolean,
     default: false
