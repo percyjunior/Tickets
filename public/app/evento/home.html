@@ -1,72 +1,72 @@
 <script>
-$(document).ready(function () {
+  $(document).ready(function () {
     $('#btn-ingresar').click(function () {
-        var url = "/evento";
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: $("#numeros").serialize(),
-            success: function (data) {
-                console.log(data);
-            }
-        });
+      var url = "/evento";
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: $("#numeros").serialize(),
+        success: function (data) {
+          console.log(data);
+        }
+      });
     });
 
-});
+  });
 </script>
-          <form method="post" id="numeros">
-            <div class="container-main">
-  <div class="row">
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
+<form method="post" id="numeros">
+  <div class="container-main">
+    <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
 
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-          <p>Bounce Rate</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-          More info <i class="fa fa-arrow-circle-right"></i>
-        </a>
       </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-yellow">
-        <div class="inner">
-          <h3>44</h3>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-          <p>User Registrations</p>
+            <p>Bounce Rate</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="#" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
         </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-          More info <i class="fa fa-arrow-circle-right"></i>
-        </a>
       </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3>44</h3>
+
+            <p>User Registrations</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="#" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+
+      </div>
+      <!-- ./col -->
     </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
+    <!-- /.row -->
 
-    </div>
-    <!-- ./col -->
-  </div>
-  <!-- /.row -->
+    <!-- =========================================================== -->
 
-  <!-- =========================================================== -->
-
-      <div class="row">
+    <div class="row">
       <div class="col-md-3">
 
         <!-- /.box -->
@@ -74,7 +74,7 @@ $(document).ready(function () {
       <!-- /.col -->
       <div class="col-md-3">
         <div class="dropdown ">
-          <select class="dropbtn" name="cantikid">
+          <select class="dropbtn" name="cantikid" id="cantikid">
             <option value="1">1 Niño</option>
             <option value="2">2 Niños</option>
             <option value="3">3 Niños</option>
@@ -91,7 +91,7 @@ $(document).ready(function () {
       <div class="col-md-3">
         <link href="../app/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
         <div class="dropdown">
-          <select class="dropbtn1" name="cantiAdu">
+          <select class="dropbtn1" name="cantiAdu" id="cantiAdu">
             <option value="1">1 Adulto</option>
             <option value="2">2 Adultos</option>
             <option value="3">3 Adultos</option>
@@ -105,20 +105,40 @@ $(document).ready(function () {
         </div>
         <!-- /.box -->
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <div class="col-md-12">
-        <div class="text-center">
-            <a href="#/registros">
-              <br>
-          <input type="button" id="btn-ingresar" value="Seleccionar" />
-          </a>
+        <div class="center col-md-4">
+          <button type="button" id="reservar" class="btn btn-block btn-info btn-lg">Info</button>
         </div>
       </div>
       <!-- /.col -->
     </div>
+    <div class="container-tickets">
 
-    <div class="row">
+    </div>
+    <hr>
+    <div id="MostrarCorreo" class="form-row d-none col-md-12">
       <div class="col-md-3">
-
+        <div class="form-label-group">
+          <label for="email">Correo Electronico:</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-label-group">
+          <input name="email" type="email" id="email" class="form-control" autofocus="autofocus"
+            placeholder="Ingrese el correo electronico">
+          <span class="help-inline error-message" style="color:red;"></span>
+        </div>
+      </div>
+      <button id="guardar">Guardar Dos Veces</button>
+      <div class="row">
+        <div class="col-md-3">
+        </div>
         <!-- /.box -->
       </div>
       <!-- /.col -->
@@ -140,5 +160,48 @@ $(document).ready(function () {
 
     <div class="col-md-1">
     </div>
-  </form>
+</form>
 </div>
+<script>
+  $(document).ready(function () {
+    function loadTemplateGenerateTickets(adult, kid) {
+      var total = adult + kid;
+      $(".container-tickets").load("app/evento/ticket.html", function (data) {
+        console.log(data);
+        for (var i = 1; i < total; i++) {
+          var formulario = $(data).attr('id', 'form-' + i);
+          formulario.find('.tittle').html("Ticket # " + (i + 1));
+          console.log(formulario.find('.tittle'));
+          $('.container-tickets').append(formulario);
+        }
+        var element = document.getElementById("MostrarCorreo");
+        element.classList.remove("d-none");
+      });
+    }
+    $('#reservar').click(function () {
+      var adult = Number(document.getElementById('cantiAdu').value);
+      var kid = Number(document.getElementById('cantikid').value);
+      loadTemplateGenerateTickets(adult, kid);
+    });
+    $('#guardar').click(function () {
+      var adult = Number(document.getElementById('cantiAdu').value);
+      var kid = Number(document.getElementById('cantikid').value);
+      var total = Number(adult + kid)
+      var tickets = []
+      for (var i = 0; i < total; i++) {
+        var currentForm = $("#form-" + i);
+        var ticket = {
+          ci: currentForm.find(".ci").val(),
+          nombre: currentForm.find(".nombre").val(),
+          apellido: currentForm.find(".apellido"),
+          sexo: currentForm.find('#sexo'),
+          telefono: currentForm.find('.telefono'),
+          nacimiento: currentForm.find('.nacimiento')
+        }
+        tickets.push(ticket);
+      }
+      console.log(tickets);
+      debugger;
+    });
+  });
+</script>

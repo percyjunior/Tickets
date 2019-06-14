@@ -1,6 +1,6 @@
 function loadPage(page) {
     $("#container-app").load("app/" + page + ".html", function (data) {
-        console.log(data);        
+       // console.log(data);        
     });
 }
 
