@@ -1,3 +1,6 @@
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 var querystring = require('querystring');
 
 exports.CrearUsuarioGet = function (req, res, next) {
@@ -9,14 +12,14 @@ exports.CrearUsuarioGet = function (req, res, next) {
 exports.logginPost = function (pedido, respuesta, next) {
   res.send("Ingresndo al metodo general");
 }
-const nuevoUsuarioCreadoo = require('../model/nuevoUsuarioCreado');
+//const nuevoUsuarioCreadoo = require('../model/nuevoUsuarioCreado');
 
 exports.home = function(req, res, next){
   res.render('Admin/adminHome');
 }
 
 exports.CrearUsuarioPost = function (req, res, next) {
-  item = {
+  /*item = {
     nombre: req.body.nombreUsuario,
     password: req.body.password,
     paypal: req.body.paypal,
@@ -25,12 +28,56 @@ exports.CrearUsuarioPost = function (req, res, next) {
   nuevoUsuarioCreado = new nuevoUsuarioCreadoo(item);
   nuevoUsuarioCreado.save();
   console.log(item);
+  res.json(nuevoUsuarioCreado);
+
+  res.send('respond with a resourcasdasdasdasde');*/
+
+}
+
+
+
+const TaskSchema= Schema({
+    nombre: String,
+    apellido: String,
+    ci: String,
+    correo: String,
+    contrasena: String,
+    contrasena2 : String,
+      
+});
+var nuevoUsuarioCreado = mongoose.model('nuevoUsuarioCreado', TaskSchema);// para utilizar en otros modulos
+
+exports.CrearPost = function (req, res, next) {
+  console.log("Creo usuario");
+
+  item = {
+    nombre: req.body.nombreusuario,
+    apellido: req.body.apellido,
+    ci: req.body.ci,
+    correo: req.body.correo,
+    contrasena: req.body.contrasena,
+    contrasena2: req.body.contrasena2
+    
+  }
+  nuevoUsuarioCreado = new nuevoUsuarioCreado(item);
+  nuevoUsuarioCreado.save();
+  console.log(item);
+  res.json(nuevoUsuarioCreado);
   res.send('respond with a resourcasdasdasdasde');
 
 }
 
 exports.MostrarUsuarios = function (req, res, next) {
-  res.send('respond with a resource');
+  console.log("Entro al mostrar usuarios");
+  nuevoUsuarioCreado.find({}, function(error, usuarios){
+       if(error){
+           res.send('Error');
+       }else{
+         res.send(usuarios);
+       //console.log(evento);
+         //res.json(nuevoEventoCreado);
+       }
+   });
 }
 
 exports.logginGet = function (req, res, next) {

@@ -122,11 +122,14 @@ router.get('/delete/:id', async (req, res, next) => {
 let pedido = require('../controller/pedido');
 let evento = require('../controller/evento');
 let asiento = require('../controller/asiento');
+let rol = require('../controller/users');
 
 router.get('/admin/nuevoEvento', evento.nuevo);
 
 router.post('/admin/nuevoEvento', evento.nuevoPost);
 router.post('/admin/nuevoAsiento', asiento.crearPost);
+router.post('/admin/nuevoRol', rol.CrearPost);
+router.get('/admin/mostrarRol', rol.MostrarUsuarios);
 
 router.get('/admin/mostrarEventos', evento.mostrar);
 router.get('/admin/mostrarAsientos', asiento.mostrar);
