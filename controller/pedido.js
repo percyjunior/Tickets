@@ -20,7 +20,7 @@ exports.eventoDetallePost = function (req, res, next) {
     
     console.log("Estos son los datos que se agarran del POST");
     console.log(item);
-    res.redirect('/evento/asientos');
+    res.redirect('/registros');
 }
 var a,b;
 function mandar(cantikid,cantiAdu){
@@ -31,7 +31,7 @@ function recibir1(){
 console.log(a);
 }
 function recibir2(){
-  console.log(a);
+  console.log(b);
   }
 exports.asientoDetalle = function (req, res, next) {
     recibir1();
