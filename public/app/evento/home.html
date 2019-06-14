@@ -1,72 +1,72 @@
 <script>
-$(document).ready(function () {
+  $(document).ready(function () {
     $('#btn-ingresar').click(function () {
-        var url = "/evento";
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: $("#numeros").serialize(),
-            success: function (data) {
-                console.log(data);
-            }
-        });
+      var url = "/evento";
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: $("#numeros").serialize(),
+        success: function (data) {
+          console.log(data);
+        }
+      });
     });
 
-});
+  });
 </script>
-          <form method="post" id="numeros">
-            <div class="container-main">
-  <div class="row">
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
+<form method="post" id="numeros">
+  <div class="container-main">
+    <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
 
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-green">
-        <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-          <p>Bounce Rate</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-          More info <i class="fa fa-arrow-circle-right"></i>
-        </a>
       </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-yellow">
-        <div class="inner">
-          <h3>44</h3>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-          <p>User Registrations</p>
+            <p>Bounce Rate</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="#" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
         </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer">
-          More info <i class="fa fa-arrow-circle-right"></i>
-        </a>
       </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3>44</h3>
+
+            <p>User Registrations</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="#" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+
+      </div>
+      <!-- ./col -->
     </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-      <!-- small box -->
+    <!-- /.row -->
 
-    </div>
-    <!-- ./col -->
-  </div>
-  <!-- /.row -->
+    <!-- =========================================================== -->
 
-  <!-- =========================================================== -->
-
-      <div class="row">
+    <div class="row">
       <div class="col-md-3">
 
         <!-- /.box -->
@@ -107,9 +107,9 @@ $(document).ready(function () {
       </div>
       <div class="col-md-12">
         <div class="text-center">
-            <a href="#/registros">
-              <br>
-          <input type="button" id="btn-ingresar" value="Seleccionar" />
+          <a href="#/registros">
+            <br>
+            <input type="button" id="btn-ingresar" value="Seleccionar" />
           </a>
         </div>
       </div>
@@ -140,5 +140,5 @@ $(document).ready(function () {
 
     <div class="col-md-1">
     </div>
-  </form>
+</form>
 </div>
