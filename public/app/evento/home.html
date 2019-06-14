@@ -198,8 +198,9 @@
       var url = "/admin/nuevoPersona";
       $.ajax({
         type: "POST",
+        data: {persona: JSON.stringify(tickets)},
+        dataType: "json",
         url: url,
-        tickets: $("#form-").serialize(),
         success: function (tickets) {
           console.log(tickets);
         }

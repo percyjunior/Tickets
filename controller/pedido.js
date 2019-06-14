@@ -127,7 +127,6 @@ function email(respuesta, ci1, nombre1,apellido1, sexo1,telefono1,nacimiento1, c
 }
 
 exports.formularioClientePost = function (req, res, next) {
-  console.log("guardo persona");
     var cod = ["cod1", "cod2"];
     /* for (var j = 0; j < (cod[0]+cod[1]); j++) {
          var listItem = req.body.createElement('li');
@@ -158,25 +157,24 @@ exports.formularioClientePost = function (req, res, next) {
         ],
         codigo:a
     }
-    console.log(req.body);
-    console.log(req.tickets);
-
-    for(i in req.data){
-      task = new Task(req.data[i]);
-      console.log("entro al for");
-
+    var item =JSON.parse(req.body.persona)
+    console.log(item);
+    for(i in item){
+      task = new Task(item[i]);
       task.save();
+      console.log(item[i]);
+      //console.log("////");
     }
     /*task = new Task(item);
    task.save();*/
-    for (i in req.data) {
-        let datastring = JSON.stringify(req.data[i]);
+    for (i in item) {
+        let datastring = JSON.stringify(item[i]);
         qrImage
             .image(datastring, { type: 'jpg', size: 20 })
-            .pipe(fs.createWriteStream(req.data[i].ci + ".jpg"));
-        console.log(req.data[i]);
+            .pipe(fs.createWriteStream(item[i].ci + ".jpg"));
+      //  console.log(item[i]);
     }
-   /* email(res, req.body.ci1, req.body.nombre1,req.body.apellido1,req.body.sexo1,req.body.telefono1, req.body.nacimiento1
+  /*  email(res, req.body.ci1, req.body.nombre1,req.body.apellido1,req.body.sexo1,req.body.telefono1, req.body.nacimiento1
       , req.body.ci2, req.body.nombre2, req.body.apellido2,req.body.sexo2,req.body.telefono2,req.body.nacimiento2, req.body.email,a);  
       
       const create_payment_json = {
