@@ -152,6 +152,7 @@ router.get('/evento', pedido.eventoDetalle);
 
 router.post('/evento', pedido.eventoDetallePost);
 
+
 router.get('/evento/asientos', pedido.asientoDetalle);
 
 router.post('/evento/asientos', pedido.asientoDetallePost);
