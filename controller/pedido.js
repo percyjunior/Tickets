@@ -157,15 +157,10 @@ exports.formularioClientePost = function (req, res, next) {
         ],
         codigo:a
     }
-<<<<<<< HEAD
-    for(i in item.data){
-      task = new Task(item.data[i]);
-=======
     var item =JSON.parse(req.body.persona)
     //console.log(item);
     for(i in item){
       task = new Task(item[i]);
->>>>>>> 78f3e2255a383ed190cbf69bd4f505f431df65a5
       task.save();
       //console.log(item[i]);
       //console.log("////");
