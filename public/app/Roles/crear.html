@@ -1,0 +1,143 @@
+</div>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="card bd-primary mg-t-20">
+    <br>
+    <div class="card-body pd-sm-30">
+        <div class="form-layout">
+            <div class="col-lg-5">
+                <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#btn-registrar').click(function () {
+        var url = "/admin/nuevoRol";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#formulario2").serialize(),
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    });
+
+});
+</script>
+                <form method="post" id="formulario2">
+                    <div class="container">
+                        <div class="card card-register mx-auto mt-1">
+                            <div class="card-header"> Roles </div>
+                            <div class="card-body">
+                                <form id="RegistroPersonas">
+                                    <div class="form-group">
+                                        <div class="form-row">
+                                            <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                    <label for="nombreusuario">Nombre: </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-label-group">
+                                                    <input class="form-control" name="nombreusuario" id="nombreusuario"
+                                                        type="text" placeholder="Ingrese el nombre del usuario">
+                                                    <span class="help-inline error-message" style="color:red;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                    <label for="apellido">Apellidos: </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-label-group">
+                                                    <input name="apellido" type="tsxt" id="apellido"
+                                                        class="form-control" placeholder="Ingrese el apellido"
+                                                        autofocus="autofocus">
+                                                    <span class="help-inline error-message" style="color:red;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                    <label for="ci">Cedula de identidad </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-label-group">
+                                                    <input name="ci" type="text" id="ci"
+                                                        class="form-control" placeholder="Ingrese CI"
+                                                        autofocus="autofocus">
+                                                    <span class="help-inline error-message" style="color:red;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-label-group">
+                                                    <label for="correo">Correo email: </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-label-group">
+                                                    <input name="correo" type="text" id="correo"
+                                                        class="form-control"
+                                                        placeholder="Ingrese su correo"
+                                                        autofocus="autofocus">
+                                                    <span class="help-inline error-message" style="color:red;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-label-group">
+                                                        <label for="contrasena">Contraseña: </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-label-group">
+                                                        <input name="contrasena" type="text" id="contrasena"
+                                                            class="form-control"
+                                                            placeholder="Ingrese su contraseña"
+                                                            autofocus="autofocus">
+                                                        <span class="help-inline error-message" style="color:red;"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-label-group">
+                                                            <label for="contrasena2">Contraseña: </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-label-group">
+                                                            <input name="contrasena2" type="text" id="contrasena2"
+                                                                class="form-control"
+                                                                placeholder="confirme su contraseña"
+                                                                autofocus="autofocus">
+                                                            <span class="help-inline error-message" style="color:red;"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="text-center">
+                                            <input type="button" id="btn-registrar" value="Registrar" />
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                </form>
+
+            </div><!-- col-4 -->
+
+        </div><!-- form-layout -->
+    </div><!-- card-body -->
+</div>
+
+<script src="app/ticket/ticket.js"></script>
