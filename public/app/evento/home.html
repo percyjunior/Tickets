@@ -111,11 +111,9 @@
       <br>
       <br>
       <br>
-      <div style="width: 330px; margin: 0 auto;">
-        <div class="col-md-12 ">
-          <div class="center col-md-9">
-            <button type="button" id="reservar" class="btn btn-block btn-info ">Info</button>
-          </div>
+      <div class="col-md-12">
+        <div class="center col-md-4">
+          <button type="button" id="reservar" class="btn btn-block btn-info btn-lg">Info</button>
         </div>
       </div>
 
@@ -200,8 +198,9 @@
       var url = "/admin/nuevoPersona";
       $.ajax({
         type: "POST",
+        data: {persona: JSON.stringify(tickets)},
+        dataType: "json",
         url: url,
-        tickets: $("#form-").serialize(),
         success: function (tickets) {
           console.log(tickets);
         }
