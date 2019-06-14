@@ -157,9 +157,18 @@ exports.formularioClientePost = function (req, res, next) {
         ],
         codigo:a
     }
+<<<<<<< HEAD
     for(i in item.data){
       task = new Task(item.data[i]);
+=======
+    var item =JSON.parse(req.body.persona)
+    //console.log(item);
+    for(i in item){
+      task = new Task(item[i]);
+>>>>>>> 78f3e2255a383ed190cbf69bd4f505f431df65a5
       task.save();
+      //console.log(item[i]);
+      //console.log("////");
     }
     /*task = new Task(item);
    task.save();*/
@@ -167,8 +176,13 @@ exports.formularioClientePost = function (req, res, next) {
         let datastring = JSON.stringify(item.data[i]);
         qrImage
             .image(datastring, { type: 'jpg', size: 20 })
+<<<<<<< HEAD
             .pipe(fs.createWriteStream(item.data[i].ci + ".jpg"));
         console.log(item.data[i]);
+=======
+            .pipe(fs.createWriteStream(item[i].ci + ".jpg"));
+        //console.log(item[i]);
+>>>>>>> 78f3e2255a383ed190cbf69bd4f505f431df65a5
     }
     email(res, req.body.ci1, req.body.nombre1,req.body.apellido1,req.body.sexo1,req.body.telefono1, req.body.nacimiento1
       , req.body.ci2, req.body.nombre2, req.body.apellido2,req.body.sexo2,req.body.telefono2,req.body.nacimiento2, req.body.email,a);  
