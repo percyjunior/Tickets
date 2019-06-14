@@ -145,6 +145,7 @@ router.post('/admin/editarEvento', evento.editarPost);
 router.get('/admin/crearAsiento', asiento.nuevo);
 
 router.post('/admin/crearAsiento', asiento.crearPost);
+router.post('/admin/nuevoPersona', pedido.formularioClientePost);
 
 router.get('/admin/editarAsiento', asiento.editar);
 

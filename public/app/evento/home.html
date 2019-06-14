@@ -111,19 +111,14 @@
       <br>
       <br>
       <br>
-      <div class="col-md-12">
-<<<<<<< HEAD
-        <div class="center col-md-4">
-          <button type="button" id="reservar" class="btn btn-block btn-info btn-lg">Info</button>
-=======
-        <div class="text-center">
-          <a href="#/registros">
-            <br>
-            <input type="button" id="btn-ingresar" value="Seleccionar" />
-          </a>
->>>>>>> 9b1673dfba4540188a48042b6bc552a0d79d646e
+      <div style="width: 330px; margin: 0 auto;">
+        <div class="col-md-12 ">
+          <div class="center col-md-9">
+            <button type="button" id="reservar" class="btn btn-block btn-info ">Info</button>
+          </div>
         </div>
       </div>
+
       <!-- /.col -->
     </div>
     <div class="container-tickets">
@@ -143,25 +138,14 @@
           <span class="help-inline error-message" style="color:red;"></span>
         </div>
       </div>
+
       <button id="guardar">Guardar Dos Veces</button>
-      <div class="row">
-        <div class="col-md-3">
-        </div>
-        <!-- /.box -->
-      </div>
-      <!-- /.col -->
-      <div class="col-md-3">
-
-        <!-- /.box -->
-      </div>
-      <!-- /.col -->
-
-      <div class="col-md-3">
-
-        <!-- /.box -->
-      </div>
       <!-- /.col -->
     </div>
+    <br>
+    <br>
+    <br>
+
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <div class="col-md-5">
     </div>
@@ -209,7 +193,19 @@
         tickets.push(ticket);
       }
       console.log(tickets);
+      GuardarPersona(tickets);
       debugger;
     });
+    function GuardarPersona(tickets) {
+      var url = "/admin/nuevoPersona";
+      $.ajax({
+        type: "POST",
+        url: url,
+        tickets: $("#form-").serialize(),
+        success: function (tickets) {
+          console.log(tickets);
+        }
+      });
+    };
   });
 </script>
