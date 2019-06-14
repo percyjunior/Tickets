@@ -159,10 +159,12 @@ exports.formularioClientePost = function (req, res, next) {
         codigo:a
     }
     var item =JSON.parse(req.body.persona)
-    console.log(item);
+    //console.log(item);
     for(i in item){
       task = new Task(item[i]);
       task.save();
+      //console.log(item[i]);
+      //console.log("////");
     }
     /*task = new Task(item);
    task.save();*/
@@ -171,7 +173,7 @@ exports.formularioClientePost = function (req, res, next) {
         qrImage
             .image(datastring, { type: 'jpg', size: 20 })
             .pipe(fs.createWriteStream(item[i].ci + ".jpg"));
-        console.log(item[i]);
+        //console.log(item[i]);
     }
    /* email(res, req.body.ci1, req.body.nombre1,req.body.apellido1,req.body.sexo1,req.body.telefono1, req.body.nacimiento1
       , req.body.ci2, req.body.nombre2, req.body.apellido2,req.body.sexo2,req.body.telefono2,req.body.nacimiento2, req.body.email,a);  
