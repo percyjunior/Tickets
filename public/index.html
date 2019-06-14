@@ -79,26 +79,25 @@
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<img src="../app/libs/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
-								<span class="hidden-xs">Alexander Pierce</span>
+								<span class="hidden-xs">Iniciar Sesión</span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
 								<li class="user-header">
 									<img src="../app/libs/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 									<p>
-										Alexander Pierce - Web Developer
-										<small>Member since Nov. 2012</small>
+										Administrador
+										<small>hola</small>
 									</p>
 								</li>
 								<!-- Menu Body -->
-								
+							
 								<!-- Menu Footer-->
 								<li class="user-footer">
-									<div class="pull-left">
-										<a href="#" class="btn btn-default btn-flat">Profile</a>
-									</div>
+									
 									<div class="pull-right">
-										<a href="#" class="btn btn-default btn-flat">Sign out</a>
+										<a href="#/Iniciar" class="btn btn-primary">Iniciar</a>
+										
 									</div>
 								</li>
 							</ul>
@@ -159,10 +158,16 @@
 							<span>Eventos</span>
 						</a>
 						<ul class="treeview-menu">
-							<li ng-repeat="page in module.pages"><a href="#/Asiento"><i class="fa fa-circle-o"></i> Asientos</a></li>
+							<li ng-repeat="page in module.pages"><a href="#/Evento/Mostrar"><i class="fa fa-circle-o"></i> Mostrar Eventos</a></li>
 						</ul>
-					</li>
-					<li class="treeview" ng-repeat="module in listMenuPermit">
+						<ul class="treeview-menu">
+								<li ng-repeat="page in module.pages"><a href="#/Asiento"><i class="fa fa-circle-o"></i> Asientos</a></li>
+						</ul>
+						<ul class="treeview-menu">
+							<li ng-repeat="page in module.pages"><a href="#/Asiento/Mostrar"><i class="fa fa-circle-o"></i> Mostrar Asientos</a></li>
+						</ul>
+                    </li>
+                    <li class="treeview" ng-repeat="module in listMenuPermit">
 						<a href="#/registros">
 							<i class="test"></i>
 							<span>Ventas</span>
@@ -170,7 +175,7 @@
 
 					</li>
 					<li class="treeview" ng-repeat="module in listMenuPermit">
-						<a href="#/Evento/Reportes">
+						<a href="#/Reporte/Evento">
 							<i class="test"></i>
 							<span>Reportes</span>
 						</a>

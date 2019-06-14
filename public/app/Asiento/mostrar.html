@@ -1,0 +1,49 @@
+<script>
+        $(document).ready(function () {
+            cargarDatos();
+            function cargarDatos() {
+                $.ajax({
+                    url: '/admin/mostrarAsientos',
+                    type: "GET",
+                    success: function (data) {
+                        //console.log(data);
+                        generarTabla(data);
+                    }, error: function (error) {
+                        console.log(error);
+                    }
+                })
+            }
+            function generarTabla(data) {
+                data.forEach(function (element, index) {
+                    var fila = $('<tr>').append($('<td>').html(element.nombre));
+                    fila.append($('<td>').html(element.precio));
+                    fila.append($('<td>').html(element.disponible));
+                    fila.append($('<td>').html(element.evento));
+                 fila.append($('<td> <a class="btn btn-info" id="btn-Editar"> Editar </a> </td><td> <a class="btn btn-danger" id="btn-Eliminar"> Eliminar </a> </td>'))
+                    $('#mytable').addClass('table').append(fila);
+    
+                })
+                $('#btn-Eliminar').click(function () {
+                           var url = "/admin/EliminarAsiento";
+                           $.ajax({
+                               type: "DELETE",
+                               url: url,
+                               
+                           });
+                       });
+            }
+    
+        });
+    
+    </script>
+    <br>
+    <table class="table" id="mytable">
+        <thead>
+            <tr>
+                <th> Tipo de asiento </th>
+                <th> Costo </th>
+                <th> Cantidad de asientos </th>
+                <th> Nombre del evento </th>
+            </tr>
+        </thead>
+    </table>

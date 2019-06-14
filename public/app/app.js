@@ -10,12 +10,20 @@ var app = $.sammy(function () {
         loadPage('ticket/home')
         //your function
     });
+    this.get('#/Reporte/Evento', function () {
+        loadPage('Reportes/mostrar')
+        //your function
+    });
+    this.get('#/Iniciar', function () {
+        loadPage('login/login')
+        //your function
+    });
     this.get('#/Evento/Mostrar', function () {
         loadPage('ticket/mostrar')
         //your function
     });
-    this.get('#/Evento/Reportes', function () {
-        loadPage('Reportes/mostrar')
+    this.get('#/Asiento/Mostrar', function () {
+        loadPage('Asiento/mostrar')
         //your function
     });
     this.get('#/registros', function () {
