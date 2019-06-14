@@ -21,12 +21,11 @@
                     fila.append($('<td>').html(element.correo));
                     fila.append($('<td>').html(element.contrasena));
                     fila.append($('<td> <a class="btn btn-info" id="btn-Editar"> Editar </a> </td><td> <a class="btn btn-danger" id="btn-Eliminar"> Eliminar </a> </td>'))
-
                     $('#mytable').addClass('table').append(fila);
     
                 })
                 $('#btn-Eliminar').click(function () {
-                           var url = "/admin/EliminarAsiento";
+                           var url = "/admin/EliminarUsuario";
                            $.ajax({
                                type: "DELETE",
                                url: url,

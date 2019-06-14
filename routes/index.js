@@ -134,6 +134,7 @@ router.get('/admin/mostrarRol', rol.MostrarUsuarios);
 router.get('/admin/mostrarEventos', evento.mostrar);
 router.get('/admin/mostrarAsientos', asiento.mostrar);
 router.delete('/admin/EliminarAsiento', asiento.destroy);
+router.delete('/admin/EliminarUsuario', rol.destroy);
 
 router.delete('/admin/EliminarEventos', evento.destroy);
 

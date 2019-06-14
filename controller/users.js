@@ -63,10 +63,18 @@ exports.CrearPost = function (req, res, next) {
   nuevoUsuarioCreado.save();
   console.log(item);
   res.json(nuevoUsuarioCreado);
-  res.send('respond with a resourcasdasdasdasde');
-
 }
-
+exports.destroy = function(req, res){
+  console.log("Entro al borrar");
+  nuevoUsuarioCreado.remove({_id: req.params._id}, function(error){
+       //console.log(_id);
+   if(error){
+     res.send('Error al intentar eliminar');
+   }else{	
+     res.send('Se lo removio correctamente');
+   }
+ });
+};
 exports.MostrarUsuarios = function (req, res, next) {
   console.log("Entro al mostrar usuarios");
   nuevoUsuarioCreado.find({}, function(error, usuarios){
@@ -74,7 +82,7 @@ exports.MostrarUsuarios = function (req, res, next) {
            res.send('Error');
        }else{
          res.send(usuarios);
-       //console.log(evento);
+         //console.log(evento);
          //res.json(nuevoEventoCreado);
        }
    });
