@@ -153,6 +153,16 @@
 
 					</li>
 					<li class="treeview" ng-repeat="module in listMenuPermit">
+						<a href="#/roles">
+							<i class="test"></i>
+							<span>Roles</span>
+						</a>
+						<ul class="treeview-menu">
+								<li ng-repeat="page in module.pages"><a href="#/roles/Mostrar"><i class="fa fa-circle-o"></i> Mostrar Roles</a></li>
+							</ul>
+
+					</li>
+					<li class="treeview" ng-repeat="module in listMenuPermit">
 						<a href="#/Evento">
 							<i class="test"></i>
 							<span>Eventos</span>
